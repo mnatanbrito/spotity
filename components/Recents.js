@@ -1,5 +1,14 @@
 import React from 'react';
-import { View, Image, Text, StyleSheet, FlatList } from 'react-native';
+import {
+  View,
+  Image,
+  Text,
+  StyleSheet,
+  FlatList,
+  Animated,
+  Easing,
+} from 'react-native';
+import { TapGestureHandler, State } from 'react-native-gesture-handler';
 
 const recents = [
   {
@@ -34,7 +43,7 @@ const styles = StyleSheet.create({
   recentWrapper: {
     justifyContent: 'space-between',
     alignItems: 'stretch',
-    paddingHorizontal: 15
+    paddingHorizontal: 15,
   },
   recentImage: {
     borderRadius: 100,
@@ -48,24 +57,64 @@ const styles = StyleSheet.create({
   },
 });
 
-const Recent = ({ title, imageUrl }) => (
-  <View style={styles.recentWrapper}>
-    <Image
-      style={styles.suggestionImage}
-      width={128}
-      height={128}
-      source={{
-        uri: imageUrl,
-        width: 128,
-        height: 128,
-      }}
-      borderRadius={100}
-    />
-    <View style={styles.recentTitleWrapper}>
-      <Text style={styles.recentTitle}>{title}</Text>
-    </View>
-  </View>
-);
+const Recent = ({ title, imageUrl }) => {
+  let animatedValue = new Animated.Value(0);
+
+  return (
+    <TapGestureHandler
+      minPointers={1}
+      onHandlerStateChange={({ nativeEvent }) => {
+        if (nativeEvent.state === State.BEGAN) {
+          console.log(`iniciando a animação`);
+          Animated.timing(animatedValue, {
+            toValue: 1,
+            duration: 300,
+            easing: Easing.linear,
+            useNativeDriver: true,
+          }).start();
+        } else {
+          console.log(`iniciando a deanimação`);
+          Animated.timing(animatedValue, {
+            toValue: 0,
+            duration: 300,
+            easing: Easing.linear,
+            useNativeDriver: true,
+          }).start();
+        }
+      }}>
+      <View style={styles.recentWrapper}>
+        <Animated.Image
+          style={{
+            ...styles.suggestionImage,
+            opacity: animatedValue.interpolate({
+              inputRange: [0, 1],
+              outputRange: [1, 0.7],
+            }),
+            transform: [
+              {
+                scale: animatedValue.interpolate({
+                  inputRange: [0, 1],
+                  outputRange: [1, 0.95],
+                }),
+              },
+            ],
+          }}
+          width={128}
+          height={128}
+          source={{
+            uri: imageUrl,
+            width: 128,
+            height: 128,
+          }}
+          borderRadius={100}
+        />
+        <View style={styles.recentTitleWrapper}>
+          <Text style={styles.recentTitle}>{title}</Text>
+        </View>
+      </View>
+    </TapGestureHandler>
+  );
+};
 
 const Recents = () => {
   return (
@@ -74,7 +123,7 @@ const Recents = () => {
         contentContainerStyle={{
           flexDirection: 'row',
           justifyContent: 'space-between',
-          alignItems: 'stretch'
+          alignItems: 'stretch',
         }}
         style={{
           flex: 1,

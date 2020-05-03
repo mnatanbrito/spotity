@@ -1,5 +1,7 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, TouchableOpacity, Text, StyleSheet, Image } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
 import colors from '../colors';
 
 const suggestions = [
@@ -26,7 +28,7 @@ const suggestions = [
   {
     title: 'Charlie Brown Jr.',
     imageUrl: 'https://www.placehold.it/65x65',
-  }
+  },
 ];
 
 const styles = StyleSheet.create({
@@ -48,14 +50,14 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   suggestionTitleWrapper: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'stretch',
-      paddingHorizontal: 10 
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'stretch',
+    paddingHorizontal: 10,
   },
   suggestionImage: {
-      borderTopLeftRadius: 5,
-      borderBottomLeftRadius: 5
+    borderTopLeftRadius: 5,
+    borderBottomLeftRadius: 5,
   },
   suggestionTitle: {
     color: 'rgb(255, 255, 255)',
@@ -63,11 +65,23 @@ const styles = StyleSheet.create({
   },
 });
 
-const Suggestions = () => {
+const Suggestions = ({}) => {
+  const navigation = useNavigation();
+
+  const onSuggestionPressed = item => {
+    navigation.navigate('DetalheObjeto', {
+      item,
+    });
+  };
+
   return (
     <View style={styles.suggestionsWrapper}>
       {(suggestions || []).map(({ title, imageUrl }, index) => (
-        <View key={index} style={styles.suggestionBadge}>
+        <TouchableOpacity
+          activeOpacity={.8}
+          key={title}
+          style={styles.suggestionBadge}
+          onPress={() => onSuggestionPressed({ title, imageUrl })}>
           <Image
             style={styles.suggestionImage}
             width={65}
@@ -81,7 +95,7 @@ const Suggestions = () => {
           <View style={styles.suggestionTitleWrapper}>
             <Text style={styles.suggestionTitle}>{title}</Text>
           </View>
-        </View>
+        </TouchableOpacity>
       ))}
     </View>
   );
