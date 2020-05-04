@@ -19,6 +19,7 @@
 		2DCD954D1E0B4F2C00145EB5 /* SpotityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* SpotityTests.m */; };
 		3B32D25C3FA304094175BE86 /* libPods-Spotity-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDAD24BAB30C2987284C91A /* libPods-Spotity-tvOS.a */; };
 		6A5B0D11316F8D80BEE99EAD /* libPods-Spotity-SpotityTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D19C8E3AF694DA868A56DE /* libPods-Spotity-SpotityTests.a */; };
+		916F288E245FC92D00B87E98 /* lineto-circular-black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 916F288D245FC8D500B87E98 /* lineto-circular-black.ttf */; };
 		B13EE28AB8FFE8B54014E29B /* libPods-Spotity-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FEE43CB7D8C129945BCE1EC /* libPods-Spotity-tvOSTests.a */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		3CC7802E8B2F0AE3DBD80BC7 /* Pods-Spotity-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spotity-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-Spotity-tvOS/Pods-Spotity-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		3FEE43CB7D8C129945BCE1EC /* libPods-Spotity-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Spotity-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B877399DEC689DF13F93D47 /* Pods-Spotity-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spotity-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Spotity-tvOSTests/Pods-Spotity-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		916F288D245FC8D500B87E98 /* lineto-circular-black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "lineto-circular-black.ttf"; sourceTree = "<group>"; };
 		A2DC6DCAEED8572457DB072E /* Pods-Spotity-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spotity-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-Spotity-tvOSTests/Pods-Spotity-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		AA5FA790F7262FB226AAD5D2 /* libPods-Spotity.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Spotity.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEDAD24BAB30C2987284C91A /* libPods-Spotity-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Spotity-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,7 +150,6 @@
 				8B877399DEC689DF13F93D47 /* Pods-Spotity-tvOSTests.debug.xcconfig */,
 				A2DC6DCAEED8572457DB072E /* Pods-Spotity-tvOSTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -175,6 +176,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				916F288C245FC8B100B87E98 /* Resources */,
 				13B07FAE1A68108700A75B9A /* Spotity */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* SpotityTests */,
@@ -196,6 +198,14 @@
 				2D02E4901E0B4A5D006451C7 /* Spotity-tvOSTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		916F288C245FC8B100B87E98 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				916F288D245FC8D500B87E98 /* lineto-circular-black.ttf */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,6 +349,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				916F288E245FC92D00B87E98 /* lineto-circular-black.ttf in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

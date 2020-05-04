@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
 import colors from '../colors';
+import defaultStyles from '../styles'
 
 const styles = StyleSheet.create({
   sectionBlockWrapper: {
@@ -13,6 +14,7 @@ const styles = StyleSheet.create({
     fontSize: 25,
     color: colors.sectionTitle,
     paddingHorizontal: 15,
+    ...defaultStyles.defaultFont
   },
   sectionChildrenWrapper: {
     paddingVertical: 20,

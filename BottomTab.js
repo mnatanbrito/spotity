@@ -23,6 +23,7 @@ const styles = StyleSheet.create({
 const tabBarIcons = {
   Home: ['fas', 'home'],
   Search: ['fas', 'search'],
+  'Your Library': ['fas', 'layer-group'],
 };
 
 const tabColors = {

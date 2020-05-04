@@ -3,6 +3,7 @@ import { View, TouchableOpacity, Text, StyleSheet, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import colors from '../colors';
+import defaultStyles from '../styles';
 
 const suggestions = [
   {
@@ -62,6 +63,7 @@ const styles = StyleSheet.create({
   suggestionTitle: {
     color: 'rgb(255, 255, 255)',
     textAlign: 'left',
+    ...defaultStyles.defaultFont,
   },
 });
 
@@ -78,7 +80,7 @@ const Suggestions = ({}) => {
     <View style={styles.suggestionsWrapper}>
       {(suggestions || []).map(({ title, imageUrl }, index) => (
         <TouchableOpacity
-          activeOpacity={.8}
+          activeOpacity={0.8}
           key={title}
           style={styles.suggestionBadge}
           onPress={() => onSuggestionPressed({ title, imageUrl })}>
