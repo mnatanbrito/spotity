@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
@@ -6,7 +7,6 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useSafeArea } from 'react-native-safe-area-context';
 import Animated from 'react-native-reanimated';
 
-import defaultStyles from '../styles';
 import MusicScreen from './MusicScreen';
 import PodcastsScreen from './PodcastsScreen';
 
@@ -82,7 +82,7 @@ function TopTabBar({ state, descriptors, navigation, position }) {
                   fontSize: 28,
                   fontWeight: 'bold',
                   marginRight: index === state.routes.length - 1 ? 0 : 20,
-                  fontFamily: 'Circular'
+                  fontFamily: 'Circular',
                 }}>
                 {label}
               </Animated.Text>

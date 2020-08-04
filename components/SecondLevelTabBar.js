@@ -1,10 +1,10 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { map } from 'lodash/collection';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import Animated from 'react-native-reanimated';
 
-import defaultStyles from '../styles';
 import colors from '../colors';
 
 const styles = StyleSheet.create({
@@ -18,8 +18,6 @@ const styles = StyleSheet.create({
   },
   tabTextWrapper: {
     height: '100%',
-    // minWidth: 100,
-    // flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'stretch',
   },
