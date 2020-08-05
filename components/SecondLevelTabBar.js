@@ -65,14 +65,15 @@ export default function SecondLevelTabBar({
           });
         };
 
-        const inputRange = map(state.routes, (_, i) => i);
-        const opacity = Animated.interpolate(position, {
-          inputRange,
-          outputRange: inputRange.map(i => (i === index ? 1 : 0)),
-        });
+        // const inputRange = map(state.routes, (_, i) => i);
+        // const opacity = Animated.interpolate(position, {
+        //   inputRange,
+        //   outputRange: inputRange.map(i => (i === index ? 1 : 0)),
+        // });
 
         return (
           <TouchableOpacity
+            key={route.key}
             accessibilityRole="button"
             accessibilityStates={isFocused ? ['selected'] : []}
             accessibilityLabel={options.tabBarAccessibilityLabel}

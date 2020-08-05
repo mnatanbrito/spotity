@@ -114,7 +114,11 @@ const Playlists = () => {
         <List
           playlists={
             term
-              ? filter(data || [], item => item.title.indexOf(term) !== -1)
+              ? filter(
+                  data || [],
+                  item =>
+                    item.title.toLowerCase().indexOf(term.toLowerCase()) !== -1,
+                )
               : data
           }
         />

@@ -14,9 +14,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgb(40,40,40)',
   },
 });
-
-// 170, 109, 109
-
 const DashboardBackground = ({ children }) => {
   return (
     <>

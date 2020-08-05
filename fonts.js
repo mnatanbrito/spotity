@@ -5,6 +5,7 @@ import {
   faCog,
   faLayerGroup,
   faCamera,
+  faTimes,
 } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faHome, faSearch, faCog, faLayerGroup, faCamera);
+library.add(faHome, faSearch, faCog, faLayerGroup, faCamera, faTimes);

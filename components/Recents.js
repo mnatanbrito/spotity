@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   View,
-  Image,
   Text,
   StyleSheet,
   FlatList,
@@ -65,7 +64,6 @@ const Recent = ({ title, imageUrl }) => {
       minPointers={1}
       onHandlerStateChange={({ nativeEvent }) => {
         if (nativeEvent.state === State.BEGAN) {
-          console.log(`iniciando a animação`);
           Animated.timing(animatedValue, {
             toValue: 1,
             duration: 300,
@@ -73,7 +71,6 @@ const Recent = ({ title, imageUrl }) => {
             useNativeDriver: true,
           }).start();
         } else {
-          console.log(`iniciando a deanimação`);
           Animated.timing(animatedValue, {
             toValue: 0,
             duration: 300,
