@@ -2,7 +2,7 @@
 
 This project is just an attempt to build a Spotify clone 😋
 
-The purpose of this is to experiment new things and possibly showcase my skills to recruiters.
+The purpose of this is to experiment new things and have fun.
 
 **I'm more concerned with mimiquing the user interface than the real features of the app.**
 
